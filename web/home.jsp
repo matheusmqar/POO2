@@ -20,7 +20,7 @@
             Matheus Marques Alves do Rosario
             
         <h2>Objetivo:</h2>
-            A aplicação irá calcular dois tipos de amortização,Constante e Americana.
+            A aplicação irá calcular dois tipos de amortização, Constante e Americana.
             <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>
