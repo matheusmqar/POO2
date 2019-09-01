@@ -19,7 +19,7 @@
             Thiago Felipe <br>
             Matheus Marques Alves do Rosario
             
-        <h1>Objetivo:</h1>
+        <h2>Objetivo:</h2>
             A aplicação irá calcular dois tipos de amortização,Constante e Americana.
             <%@include file=""%>
     </body>
