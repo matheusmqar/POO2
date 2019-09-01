@@ -12,7 +12,8 @@
         <title>Cáculo Amortização</title>
     </head>
     <body>
-        <h1>Grupo:</h1>
+        
+        <h1>Grupo:</h1> 
         
             Gabriel dos Santos Prieto <br>
             Yficklis Silvio dos Santos Venancio <br>
