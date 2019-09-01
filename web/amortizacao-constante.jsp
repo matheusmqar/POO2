@@ -4,6 +4,7 @@
     Author     : gabrielprieto
 --%>
 
+<%@page import="java.text.DecimalFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,6 +15,28 @@
     <body>
         <%@include file="WEB-INF/jspf/header.jspf"%>
         <h1>Amortização Constante</h1>
+        
+        <form>
+        
+        <label for="valor"><b>Valor Financiado</b></label>
+        <input id="valor" type="text" name="valor"/>
+        
+        <label for="meses"><b>Meses</b></label>
+        <input id="meses" type="text" name="meses"/>
+        
+         <label for="juros"><b>Juros</b></label>
+         <input id="juros" type="text" name="juros"/>
+         
+        <input type="submit" name="enviar" value="Gerar Amortização" class="btn"/>
+        
+        </form>
+        
+
+    
+        
+        
+        
+        
         <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>
