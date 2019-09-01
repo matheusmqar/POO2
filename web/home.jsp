@@ -9,9 +9,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Cáculo Amortização</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Grupo:</h1>
+        
+            Gabriel dos Santos Prieto <br>
+            Yficklis Silvio dos Santos Venancio <br>
+            Thiago Felipe <br>
+            Matheus Marques Alves do Rosario
+            
+        <h1 style="text-align: center">Objetivo:</h1>
+            A aplicação irá calcular dois tipos de amortização,Constante e Americana.
+        
     </body>
 </html>
