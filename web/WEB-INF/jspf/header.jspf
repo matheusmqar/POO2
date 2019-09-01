@@ -1,6 +1,6 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
 <div><a href="home.jsp">Voltar</a></div>
-<div><a href="amortizacao-americana.jsp"></a>Amortização Americana</div>
-<div><a href="amortizacao-constante.jsp"></a>Amortização Constante</div>
-<div><a href="tabela-price.jsp"></a>Tabela - Price</div>
+<div><a href="amortizacao-americana.jsp">Amortização Americana</a></div>
+<div><a href="amortizacao-constante.jsp">Amortização Constante</a></div>
+<div><a href="tabela-price.jsp">Tabela - Price</a></div>

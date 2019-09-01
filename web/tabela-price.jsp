@@ -9,10 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Amortização Americana</title>
+        <title>Tabela - Price</title>
     </head>
     <body>
-        <h1>Amortização Americana</h1>
+        <%@include file="WEB-INF/jspf/header.jspf"%>
+        <h1>Tabela - Price</h1>
         <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>

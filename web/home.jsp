@@ -12,6 +12,7 @@
         <title>Cáculo Amortização</title>
     </head>
     <body>
+        <%@include file="WEB-INF/jspf/header.jspf"%>
         
         <h1>Grupo:</h1> 
         
@@ -21,7 +22,7 @@
             Matheus Marques Alves do Rosario
             
         <h2>Objetivo:</h2>
-            A aplicação irá calcular dois tipos de amortização, Constante e Americana.
+            A aplicação irá calcular dois tipos de amortização, Constante, Americana e Tabela Price.
             <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>
