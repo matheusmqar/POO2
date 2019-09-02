@@ -18,13 +18,13 @@
         
         <form>
         
-        <label for="valor"><b>Valor Financiado</b></label>
+        <label for="valor"><b>Capital</b></label>
         <input id="valor" type="text" name="valor"/>
         
         <label for="meses"><b>Meses</b></label>
         <input id="meses" type="text" name="meses"/>
         
-         <label for="juros"><b>Juros</b></label>
+         <label for="juros"><b>Juros (%)</b></label>
          <input id="juros" type="text" name="juros"/>
          
         <input type="submit" name="enviar" value="Gerar Amortização" class="btn"/>

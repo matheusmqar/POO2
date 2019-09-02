@@ -13,7 +13,7 @@
     </head>
     <body style="background-color:black; color:white; center">
         <%@include file="WEB-INF/jspf/header.jspf"%>
-        <h1>style="color:white; text-align:center;">Sistema de Amortização Americana</h1>
+        <h1 style="color:white; text-align:center;">Sistema de Amortização Americana</h1>
         <%@include file="WEB-INF/jspf/footer.jspf"%>
         <form>
                 Capital (R$) <input type="text" name="capital"/> <br>
@@ -48,7 +48,7 @@
                  <%  }%>
                  <%jurosTotal = jurosTotal*meses;%>
                  <% amortizacaoTotal = capital+jurosTotal;%>
-                 <h1> Total <%=amortizacaoTotal%> </h1>
+                 <h1> Total = <%=amortizacaoTotal%> </h1>
                 </table>
                
             <%}%>
