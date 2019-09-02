@@ -78,8 +78,8 @@
                         <tbody>
                             <tr>
                                 <td> <%=i%> </td>
-                                <td> <%=jurosTotal%> </td>
-                                <td> <%=jurosTotal%> </td>
+                                <td>R$<%=formatar.format(jurosTotal)%> </td>
+                                <td>R$<%=formatar.format(jurosTotal)%> </td>
                                 <td>R$<%=formatar.format(capital)%> </td>
                             </tr>
                         </tbody>
