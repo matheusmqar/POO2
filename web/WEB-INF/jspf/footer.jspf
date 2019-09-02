@@ -2,18 +2,18 @@
 <%@ page pageEncoding="UTF-8" %>
 <footer class="footer has-background-white">
   <div class="content has-text-centered">
-    <p>
+    <br/>
       <div class="columns">
         <div class="column">
-          <strong>2° Projeto de Programação Orientada a Objetos</strong> Grupo 5 - FATEC PG 2019.
+          <strong>2° Projeto de Programação Orientada a Objetos </strong>-  Grupo 5 - FATEC PG 2019.
         </div>
       </div>
       <div class="columns">
         <div class="column">
-           <a href="https://github.com/matheusmqar/POO2"> GitHub</a>.
+           <a href="https://github.com/matheusmqar/POO2" target="_blank"> GitHub.</a>
         </div>
       </div>
-    </p>
+  
   </div>
 </footer>
 <div style="text-align: center"></div>

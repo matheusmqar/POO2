@@ -4,6 +4,7 @@
     Author     : gabrielprieto
 --%>
 
+<%@page import="java.text.DecimalFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,19 +31,19 @@
                             <div class="field">
                                 <label class="label">Valor Financiado (R$)</label>
                                 <div class="control">
-                                    <input class="input" type="number" name="valorFinanciado">
+                                    <input class="input" type="text" name="valorFinanciado">
                                 </div>
                             </div>
                             <div class="field">
                                 <label class="label">Meses</label>
                                 <div class="control">
-                                    <input class="input" type="number" name="mes">
+                                    <input class="input" type="text" name="mes">
                                 </div>
                             </div>
                             <div class="field">
-                                <label class="label">Juros</label>
+                                <label class="label">Juros (%)</label>
                                 <div class="control">
-                                    <input class="input" type="number" name="juros">
+                                    <input class="input" type="text" name="juros">
                                 </div>
                             </div>
                             <div class="control">
@@ -60,7 +61,8 @@
                                     double amortizacao = 0;
                                     double parcelas = 0;
                                     double acumuloJuros = 0;
-                                    double divida = 0; %>
+                                    double divida = 0;
+                                    DecimalFormat formatar = new DecimalFormat("0.##");%>
 
                         <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
                             <thead>
@@ -78,11 +80,11 @@
                                     amortizacao = parcelas - acumuloJuros;
                                     divida = valorFinanciado - amortizacao;%>
                                 <tr>
-                                    <td><%= i%></td>
-                                    <td><%= parcelas%></td>
-                                    <td><%= amortizacao%></td>
-                                    <td><%= acumuloJuros%></td>
-                                    <td><%= divida%></td>
+                                   <td><%= i%></td>
+                                    <td><%= "R$"+ formatar.format(parcelas)%></td>
+                                    <td><%= "R$"+ formatar.format(amortizacao)%></td>
+                                    <td><%= "R$"+ formatar.format(acumuloJuros)%></td>
+                                    <td><%= "R$"+ formatar.format(divida)%></td>
                                 </tr>
                                 <% for (i = 2; i <= mes; i++) {
                                         acumuloJuros = divida * (juros / 100);
@@ -91,10 +93,10 @@
                                         divida = (i == mes)? 0 : divida ;%>
                                 <tr>
                                     <td><%= i%></td>
-                                    <td><%= parcelas%></td>
-                                    <td><%= amortizacao%></td>
-                                    <td><%= acumuloJuros%></td>
-                                    <td><%= divida%></td>
+                                    <td><%= "R$"+ formatar.format(parcelas)%></td>
+                                    <td><%= "R$"+ formatar.format(amortizacao)%></td>
+                                    <td><%= "R$"+ formatar.format(acumuloJuros)%></td>
+                                    <td><%= "R$"+ formatar.format(divida)%></td>
                                 </tr>
                                 <% }%>
                             </tbody>

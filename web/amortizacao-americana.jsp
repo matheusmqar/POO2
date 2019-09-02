@@ -4,6 +4,7 @@
     Author     : gabrielprieto
 --%>
 
+<%@page import="java.text.DecimalFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -41,7 +42,7 @@
                             </div>
                         </div>
                         <div class="field">
-                            <label class="label">Taxa de Juros (%) </label>
+                            <label class="label">Juros (%) </label>
                             <div class="control">
                                 <input class="input" type="text" name="juros"/>
                             </div>
@@ -59,32 +60,34 @@
                         double taxaJuros = Double.parseDouble(request.getParameter("juros"));
                         double jurosTotal;
                         double amortizacaoTotal;
-                        taxaJuros = taxaJuros / 100;%>
+                        taxaJuros = taxaJuros / 100;
+                        DecimalFormat formatar = new DecimalFormat("0.##");
+                    %>
 
                     <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
                         <thead>
                             <tr>
-                                <th> Saldo </th>
                                 <th> Mês   </th>
                                 <th> Juros </th>
                                 <th> Prestação </th>
+                                <th> Saldo </th>
                             </tr>
                         </thead>
                         <%jurosTotal = taxaJuros * capital;%>
                         <% for (int i = 1; i <= meses; i++) {%>
                         <tbody>
                             <tr>
-                                <td> <%=capital%> </td>
                                 <td> <%=i%> </td>
                                 <td> <%=jurosTotal%> </td>
                                 <td> <%=jurosTotal%> </td>
+                                <td>R$<%=formatar.format(capital)%> </td>
                             </tr>
                         </tbody>
                         <%  }%>
                         <%jurosTotal = jurosTotal * meses;%>
                         <% amortizacaoTotal = capital + jurosTotal;%>
                     </table>
-                    <h1 class="title is-4"> Total <%=amortizacaoTotal%> </h1>
+                    <h1 class="title is-4"> Total = R$ <%=amortizacaoTotal%> </h1>
 
                     <%}%>
                     <% } catch (Exception ex) { %>

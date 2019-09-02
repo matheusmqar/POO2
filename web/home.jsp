@@ -36,7 +36,7 @@
                                     </div>
                                     <div class="media-content">
                                         <p class="title is-4">Gabriel dos Santos Prieto</p>
-                                        <p class="subtitle is-6"><a  href="https://github.com/gabrielninja" >@gabrielninja</a></p>
+                                        <p class="subtitle is-6"><a  href="https://github.com/gabrielninja" target="_blank" >@gabrielninja</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="media-content">
                                         <p class="title is-4">Thiago Felipe</p>
-                                        <p class="subtitle is-6"><a href="https://github.com/thiagofelipe113" >@thiagofelipe113</a></p>
+                                        <p class="subtitle is-6"><a href="https://github.com/thiagofelipe113" target="_blank" >@thiagofelipe113</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                                     </div>
                                     <div class="media-content">
                                         <p class="title is-4">Matheus Marques</p>
-                                        <p class="subtitle is-6"><a  href="https://github.com/matheusmqar">@matheusmqar</a></p>
+                                        <p class="subtitle is-6"><a  href="https://github.com/matheusmqar" target="_blank" >@matheusmqar</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
                                     </div>
                                     <div class="media-content">
                                         <p class="title is-4">Yficklis Santos</p>
-                                        <p class="subtitle is-6"><a  href="https://github.com/yficklis">@yficklis</a></p>
+                                        <p class="subtitle is-6"><a  href="https://github.com/yficklis" target="_blank">@yficklis</a></p>
                                     </div>
                                 </div>
                             </div>

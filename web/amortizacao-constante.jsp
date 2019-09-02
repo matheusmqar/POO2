@@ -41,7 +41,7 @@
                           </div>
                       </div>
                       <div class="field">
-                          <label class="label">Juros</label>
+                          <label class="label">Juros (%)</label>
                           <div class="control">
                               <input class="input" type="text" name="juros">
                           </div>
@@ -52,6 +52,7 @@
                     </form>
                   </div>
                   <div class="column">
+                      <%try { %>
                     <%
                         if (request.getParameter("valor") != null
                                 & request.getParameter("meses") != null
@@ -93,6 +94,10 @@
                           %>
                         </tbody>
                     </table>
+                    <% } %>
+
+                     <% } catch (Exception e) { %>
+                       <h2 style="color:red; text-align:center;"> ERROR </h2> 
                     <%
                         }
                     %>
