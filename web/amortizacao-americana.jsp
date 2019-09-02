@@ -52,7 +52,7 @@
                 </table>
                
             <%}%>
-        <% } catch(Exception ex){ %>
+        <% } catch(Exception ex) { %>
         <br>
         <br>
         <br>
@@ -60,6 +60,6 @@
         <br>
         <br>
         <h3 style="color:red; text-align:center;"> Algo deu errado. Tente novamente!</h3>
-    
+            <%}%>
     </body>
 </html>
