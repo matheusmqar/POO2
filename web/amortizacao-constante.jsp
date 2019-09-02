@@ -70,12 +70,13 @@
                           <tr>
                               <th>Mês</th>
                               <th>Prestação</th>
+                              <th>Amortização</th>
                               <th>Juros</th>
                               <th>Saldo devedor</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr><td>0</td><td> - </td><td> - </td><td>R$<%=formatar.format(valor)%></td></tr>
+                          <tr><td>0</td><td> - </td><td> - </td><td> - </td><td>R$<%=formatar.format(valor)%></td></tr>
                           <%
                               amortizacao = valor / meses;
                               for (int i = 1; i <= meses; i++) {
@@ -86,6 +87,7 @@
                           <tr>
                               <td><%=i%></td>
                               <td>R$<%=formatar.format(prestacao)%></td>
+                              <td>R$<%=formatar.format(amortizacao)%></td>  
                               <td>R$<%=formatar.format(valorjuros)%></td>
                               <td>R$<%=formatar.format(valor)%></td>
                           </tr>
