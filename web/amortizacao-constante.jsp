@@ -31,12 +31,48 @@
         
         </form>
         
-
+        <%  
+            if (request.getParameter("valor") != null & 
+                        request.getParameter("meses") != null & 
+                            request.getParameter("juros") != null) {
+            double valor = Double.parseDouble(request.getParameter("valor"));
+            int meses = Integer.parseInt(request.getParameter("meses"));
+            double juros = Double.parseDouble(request.getParameter("juros")) / 100;
+            DecimalFormat formatar = new DecimalFormat("0.##");
+            double amortizacao = 0, prestacao = 0, valorjuros = 0;
+    %>
     
+    <br/>
+    <table border="1" style="margin-left: 35%" class="table">
+            <tr>
+                <th>Prestação</th><th>Juros</th><th>Saldo devedor</th>
+            </tr>
+
+        <tr><td>0</td><td> - </td><td> - </td><td>R$<%=formatar.format(valor)%></td></tr>
         
+        <% 
+            amortizacao = valor / meses;
+            for (int i = 1; i <= meses; i++) {
+                valorjuros = valor * juros;
+                prestacao = amortizacao + valorjuros;
+                valor = valor - amortizacao;
+        %>
+        <tr>
+            <td><%=i%></td>
+            <td>R$<%=formatar.format(prestacao)%></td>   
+            <td>R$<%=formatar.format(valorjuros)%></td>   
+            <td>R$<%=formatar.format(valor)%></td>  
+        </tr>   
+    
+         <%
+            }
+        %>
         
+        </table>
         
-        
+          <%
+        }
+           %> 
         <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>
