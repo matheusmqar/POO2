@@ -27,73 +27,76 @@
                 </div>
 
                 <div class="columns">
-                  <div class="column">
-                    <form>
-                        <div class="field">
-                            <label class="label">Capital (R$) </label>
-                            <div class="control">
-                                <input class="input" type="text" name="capital">
+                    <div class="column">
+                        <form>
+                            <div class="field">
+                                <label class="label">Valor Financiado</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="capital">
+                                </div>
                             </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">Meses</label>
-                            <div class="control">
-                                <input class="input" type="text" name="meses"/>
+                            <div class="field">
+                                <label class="label">Meses</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="meses"/>
+                                </div>
                             </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">Juros (%) </label>
-                            <div class="control">
-                                <input class="input" type="text" name="juros"/>
+                            <div class="field">
+                                <label class="label">Juros (%) </label>
+                                <div class="control">
+                                    <input class="input" type="text" name="juros"/>
+                                </div>
                             </div>
-                        </div>
-                        <div class="control">
-                            <input class="button is-primary" type ="submit" value="Calcular" name="calculo">
-                        </div>
-                    </form>
-                  </div>
-                  <div class="column">
-                    <%try { %>
-                    <%if (request.getParameter("calculo") != null) {%>
-                    <%  double capital = Double.parseDouble(request.getParameter("capital"));
-                        int meses = Integer.parseInt(request.getParameter("meses"));
-                        double taxaJuros = Double.parseDouble(request.getParameter("juros"));
-                        double jurosTotal;
-                        double amortizacaoTotal;
-                        taxaJuros = taxaJuros / 100;
-                        DecimalFormat formatar = new DecimalFormat("0.##");
-                    %>
+                            <div class="control">
+                                <input class="button is-primary" type ="submit" value="Calcular" name="calculo">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="column">
+                        <%try { %>
+                        <%  if (request.getParameter("capital") != null & request.getParameter("meses") != null & request.getParameter("juros") != null) {
+                                double capital = Double.parseDouble(request.getParameter("capital"));
+                                int meses = Integer.parseInt(request.getParameter("meses"));
+                                double juros = Double.parseDouble(request.getParameter("juros")) / 100;
+                                DecimalFormat formatar = new DecimalFormat("0.##");
+                                double amortizacao = 0;
+                        %>
 
-                    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-                        <thead>
+                        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                            <thead>
+                                <tr>
+                                    <th> Mês   </th>
+                                    <th> Parcelas </th>
+                                    <th> Amortização </th>
+                                    <th> Juros  </th>
+                                    <th> Saldo</th>
+                                </tr>
+                            </thead>
                             <tr>
-                                <th> Mês   </th>
-                                <th> Juros </th>
-                                <th> Prestação </th>
-                                <th> Saldo </th>
+                                <% for (int i = 0; i < meses; i++) {
+                                        double parcela = capital * juros;
+                                        double saldoDevedor = capital;
+                                        if (i == (meses - 1)) {
+                                            parcela = parcela + capital;
+                                            amortizacao = capital;
+                                            saldoDevedor = saldoDevedor - capital;
+                                        }
+                                %>
                             </tr>
-                        </thead>
-                        <%jurosTotal = taxaJuros * capital;%>
-                        <% for (int i = 1; i <= meses; i++) {%>
-                        <tbody>
                             <tr>
-                                <td> <%=i%> </td>
-                                <td>R$<%=formatar.format(jurosTotal)%> </td>
-                                <td>R$<%=formatar.format(jurosTotal)%> </td>
-                                <td>R$<%=formatar.format(capital)%> </td>
+                                <td><%= (i + 1)%></td>
+                                <td><%= formatar.format(parcela)%></td>
+                                <td><%= formatar.format(amortizacao)%></td>
+                                <td><%= formatar.format(capital * juros)%></td>
+                                <td><%= formatar.format(saldoDevedor)%></td>
                             </tr>
-                        </tbody>
-                        <%  }%>
-                        <%jurosTotal = jurosTotal * meses;%>
-                        <% amortizacaoTotal = capital + jurosTotal;%>
-                    </table>
-                    <h1 class="title is-4"> Total = R$ <%=amortizacaoTotal%> </h1>
-
-                    <%}%>
-                    <% } catch (Exception ex) { %>
-                    <h3 style="color:red; text-align:center;"> Algo deu errado. Tente novamente!</h3>
-                    <%}%>
-                  </div>
+                            <%}%>
+                            <%}%>
+                        </table>
+                        <%} catch (Exception ex) { %>
+                        <h3 style="color:red; text-align:center;"> Algo deu errado. Tente novamente!</h3>
+                        <%}%>
+                    </div>
                 </div>
             </section>
         </div>
